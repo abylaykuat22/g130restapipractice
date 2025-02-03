@@ -1,12 +1,19 @@
 package kz.bitlab.g130restapipractice.service;
 
-import kz.bitlab.g130restapipractice.entity.Student;
+import kz.bitlab.g130restapipractice.dto.StudentRequestDto;
+import kz.bitlab.g130restapipractice.dto.StudentResponseDto;
 
 import java.util.List;
 
 public interface StudentService {
 
-    List<Student> getStudents(Short age, Double gpa);
+    List<StudentResponseDto> getStudents(Short age, Double gpa);
 
-    Student getStudentById(Long id);
+    StudentResponseDto getStudentById(Long id);
+
+    void createStudent(StudentRequestDto studentRequestDto);
+
+    void updateGpa(Long id, Double gpa);
+
+    void deleteById(Long id);
 }

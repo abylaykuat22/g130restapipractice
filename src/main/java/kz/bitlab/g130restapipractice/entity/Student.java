@@ -32,9 +32,9 @@ public class Student {
     @ManyToOne(fetch = FetchType.LAZY)
     private University university;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "STUDENT_SUBJECTS",
             joinColumns = @JoinColumn(name = "STUDENT_ID"),
             inverseJoinColumns = @JoinColumn(name = "SUBJECT_ID"))
-    private List<Subject> subject;
+    private List<Subject> subjects;
 }
